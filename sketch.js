@@ -2,7 +2,7 @@ let star1, star2, star3, star4, star5, star6; //white circles that show up in ca
 let stage = 0;
 var mouseprevX = 400;
 var mouseprevY = 500;
-let clicks = 0;
+
 
 function setup() {
     new Canvas("fullscreen");
@@ -41,53 +41,56 @@ function draw() {
             if (millis() > 7000) {
                 stage = 1;
             }
+
             break;
+
         case 1:
-                //game
-                background(1, 20, 28);
-                noLoop();
+            //game
+            background(1, 20, 28);
+            noLoop();
 
-                textSize(12);
-                fill('white');
-                text('1', 400, 480);
-                text('2', 695, 210);
-                text('3', 795, 280);
-                text('4', 895, 400);
-                text('5', 1000, 570);
-                text('6', 1295, 320);
+            textSize(12);
+            fill('white');
+            text('1', 400, 480);
+            text('2', 695, 210);
+            text('3', 795, 280);
+            text('4', 895, 400);
+            text('5', 1000, 570);
+            text('6', 1295, 320);
 
-                star1.visible = true;
-                star2.visible = true;
-                star3.visible = true;
-                star4.visible = true;
-                star5.visible = true;
-                star6.visible = true;
+            star1.visible = true;
+            star2.visible = true;
+            star3.visible = true;
+            star4.visible = true;
+            star5.visible = true;
+            star6.visible = true;
 
-                if (millis() > 5000) {
-                    stage = 2;
-                }
-                break;
+            if (millis() > 14000) {
+                stage = 2;
+            }
+
+            break;
+
         case 2:
-                //congrats screen
-                background('black');
-                textSize(50);
-                fill(255);
-                text("You won!", 500, 100);
+            //congrats screen
+            background('black');
+            textSize(50);
+            fill(255);
+            text("You won!", 500, 100);
 
-                star1.visible = false;
-                star2.visible = false;
-                star3.visible = false;
-                star4.visible = false;
-                star5.visible = false;
-                star6.visible = false;
+            star1.visible = false;
+            star2.visible = false;
+            star3.visible = false;
+            star4.visible = false;
+            star5.visible = false;
+            star6.visible = false;
 
-                break;
-                //finished
+            break;
+            //finished
     }
 }
 
 function mouseClicked() {
-    clicks++;
     line(mouseprevX, mouseprevY, mouseX, mouseY);
     mouseprevX = mouseX;
     mouseprevY = mouseY;
