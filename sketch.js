@@ -1,7 +1,9 @@
 let star1, star2, star3, star4, star5, star6; //white circles that show up in case 1
 let stage = 0;
-let linestartPoint = []; //this array stores info about the stars/circles clicked, forming a "connection" between them
-let selectedStar; 
+var mouseprevX = 400;
+var mouseprevY = 500;
+
+
 
 function setup() {
     new Canvas("fullscreen");
@@ -44,6 +46,7 @@ function draw() {
         case 1:
                 //game
                 background(1, 20, 28);
+                noLoop();
                 
                 textSize(12);
                 fill('white');
@@ -60,18 +63,7 @@ function draw() {
                 star4.visible = true;
                 star5.visible = true;
                 star6.visible = true;
-                
-                for (let linepoints of linestartPoint) {
-                    let l1 = linepoints[0];
-                    let l2 = linepoints[1];
-                    line(l1.x, l1.y, l2.x, l2.y);
-                }
 
-                if (selectedStar) {
-                    line(star1.x, star1.y, mouseX, mouseY);
-                }
-
-                
                 break;
         case 2:
                 //congrats screen
@@ -92,6 +84,9 @@ function draw() {
     }
 }
 
-function mouseDragged() {
-    line(star1.x, star1.y, mouseX, mouseY);
-}
+function mouseClicked() {
+    line(mouseprevX, mouseprevY, mouseX, mouseY);
+    mouseprevX = mouseX;
+    mouseprevY = mouseY;
+  }
+
