@@ -2,8 +2,7 @@ let star1, star2, star3, star4, star5, star6; //white circles that show up in ca
 let stage = 0;
 var mouseprevX = 400;
 var mouseprevY = 500;
-
-
+let clicks = 0;
 
 function setup() {
     new Canvas("fullscreen");
@@ -47,7 +46,7 @@ function draw() {
                 //game
                 background(1, 20, 28);
                 noLoop();
-                
+
                 textSize(12);
                 fill('white');
                 text('1', 400, 480);
@@ -63,6 +62,13 @@ function draw() {
                 star4.visible = true;
                 star5.visible = true;
                 star6.visible = true;
+
+                if (mouseIsPressed) {
+                    tries++
+                }
+                if (tries >= 5) {
+                    stage = 2;
+                }
 
                 break;
         case 2:
@@ -88,5 +94,4 @@ function mouseClicked() {
     line(mouseprevX, mouseprevY, mouseX, mouseY);
     mouseprevX = mouseX;
     mouseprevY = mouseY;
-  }
-
+}
