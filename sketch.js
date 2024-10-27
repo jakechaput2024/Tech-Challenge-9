@@ -68,24 +68,29 @@ function draw() {
                 }
 
                 if (selectedStar) {
-                    line(startCircle.x, startCircle.y, mouseX, mouseY);
+                    line(star1.x, star1.y, mouseX, mouseY);
                 }
 
-                if (mouse.presses()) {
-                    if (dist(mouseX, mouseY, star1.x, star1.y) < 10) {
-                        handleCircleClick(star1);
-                      } else if (dist(mouseX, mouseY, star2.x, star2.y) < 10) {
-                        handleCircleClick(star2);
-                      } else if (dist(mouseX, mouseY, star3.x, star3.y) < 10) {
-                        handleCircleClick(star3);
-                      } else {
-                        selectedStar = null;  // Deselect if clicking outside any circle
-                      }
-                }
+                
                 break;
         case 2:
                 //congrats screen
+                background('black');
+                textSize(50);
+                fill(255);
+                text("You won!", 500, 100);
+
+                star1.visible = false;
+                star2.visible = false;
+                star3.visible = false;
+                star4.visible = false;
+                star5.visible = false;
+                star6.visible = false;
+
                 break;
     }
+}
 
+function mouseDragged() {
+    line(star1.x, star1.y, mouseX, mouseY);
 }
