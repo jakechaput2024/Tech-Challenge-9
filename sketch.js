@@ -88,6 +88,7 @@ function draw() {
                 star6.visible = false;
 
                 break;
+                //finished
     }
 }
 
