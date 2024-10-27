@@ -63,13 +63,9 @@ function draw() {
                 star5.visible = true;
                 star6.visible = true;
 
-                if (mouseIsPressed) {
-                    tries++
-                }
-                if (tries >= 5) {
+                if (millis() > 5000) {
                     stage = 2;
                 }
-
                 break;
         case 2:
                 //congrats screen
@@ -91,7 +87,9 @@ function draw() {
 }
 
 function mouseClicked() {
+    clicks++;
     line(mouseprevX, mouseprevY, mouseX, mouseY);
     mouseprevX = mouseX;
     mouseprevY = mouseY;
+    
 }
