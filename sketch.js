@@ -1,7 +1,7 @@
 let star1, star2, star3, star4, star5, star6; //white circles that show up in case 1
 let stage = 0;
-var mouseprevX = 400;
-var mouseprevY = 500;
+let mouseprevX = 400;
+let mouseprevY = 500;
 
 
 function setup() {
