@@ -27,6 +27,7 @@ function draw() {
         case 0:
             //intro text
             background('black');
+            noLoop();
             textSize(50);
             fill(255);
             text("Try to connect all of the dots in order!", 500, 100);
@@ -47,7 +48,7 @@ function draw() {
         case 1:
             //game
             background(1, 20, 28);
-            noLoop();
+        
 
             textSize(12);
             fill('white');
